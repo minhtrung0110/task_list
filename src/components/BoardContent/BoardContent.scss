@@ -1,0 +1,22 @@
+@import '../../scss/style.scss';
+
+
+.board-columns{
+  background-color:$appbar-bg-color ;
+  display: flex;
+  padding:$gap ;
+
+  overflow-x: auto;
+  &::-webkit-scrollbar{
+    -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar:horizontal{
+    height:11px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color:darken($list-bg-color,15);
+    border-radius:3px;
+  }
+
+  //  background-color:$
+}
