@@ -1,7 +1,8 @@
 @import '../../scss/style.scss';
 .column{
   flex:0 0 auto ;
-  width: 300px;
+  max-width: 400px;
+  min-width: 380px;
   height:calc(100% - #{$gap});
   margin-left: $gap;
   overflow-y: auto;
@@ -12,6 +13,12 @@
     background-color:$list-bg-color;
     color:#333;
     padding: 0 8px;
+  }
+  .col-title {
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+    padding:$gap 0;
   }
   header {
     padding-left: 15px;

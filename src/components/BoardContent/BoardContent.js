@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./BoardContent.scss"
 import Column from "~/components/Column/Column";
-function BoardContent(props) {
+function BoardContent({currentBoard}) {
+   // console.log(currentBoard)
+
     return (
         <div className="board-columns ">
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
+            {
+                !!currentBoard && currentBoard.columns.map((col,index)=> (
+                    <Column data={col}  key={index}/>
+                ))
+            }
+
         </div>
     );
 }

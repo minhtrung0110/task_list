@@ -1,20 +1,19 @@
 import React from 'react';
-import './Column.scss'
-import Task from "~/components/Task/Task";
-function Column(props) {
+import Card from "~/components/Card/Card";
+import classNames from "classnames/bind";
+import styles from "./Column.scss";
+
+const cx = classNames.bind(styles);
+function Column({data}) {
     return (
         <div className="column">
-            <header>Brainstorm + </header>
+            <header className={cx('col-title')}  >{data.title} </header>
             <ul>
-                <Task />
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-                <li>Authen cho chức năng đăng nhập và tạo đề thi và thi</li>
-
+                {
+                    !!data.cards && data.cards.map((item,index) =>(
+                        <Card data={item} key={index} />
+                    ))
+                }
             </ul>
             <footer>Add another card</footer>
         </div>
