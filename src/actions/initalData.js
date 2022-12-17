@@ -1,6 +1,3 @@
-import card from "~/components/Card/Card";
-import column from "~/components/Column/Column";
-
 export const  initialData ={
     boards:[
         {
