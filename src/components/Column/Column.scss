@@ -3,12 +3,10 @@
   flex:0 0 auto ;
   max-width: 400px;
   min-width: 380px;
-  height:calc(100% - #{$gap});
+  height:800px;
   margin-left: $gap;
-  overflow-y: auto;
-  &:not(:first-child){
-    margin-left: $gap;
-  }
+  overflow-y: auto;;
+
   > * {
     background-color:$list-bg-color;
     color:#333;
@@ -31,18 +29,25 @@
     cursor:pointer;
   }
   footer {
-    padding-left: 15px;
     height:$column-footer-height;
     line-height: 36px;
     font-size: 16px;
     font-weight: bold;
+    padding: $gap;
+    text-align: center;
     border-bottom-left-radius: $column-border-radius;
     border-bottom-right-radius: $column-border-radius;
   }
-  ul{
+  footer:hover{
+    cursor: pointer;
+    background-color: rgb(213, 212, 212);
+    font-size: 18px;
+
+  }
+  .card-list{
     list-style: none;
     margin:0;
-    max-height:calc(100% - #{$column-footer-height} - #{$column-header-height});
+    max-height:630px;
     overflow-y:auto;
     &::-webkit-scrollbar{
       -webkit-appearance: none;
@@ -57,7 +62,28 @@
       border-radius:3px;
 
     }
+    .card-ghost {
+      transition: transform 0.18s ease;
+      transform: rotateZ(5deg);
+      font-weight: bold;
+    }
 
+    .card-ghost-drop{
+      transition: transform 0.18s ease-in-out;
+      transform: rotateZ(0deg);
+      font-weight: bold;
+    }
+    .drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px;
+    }
+
+    .cards-drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px 45px 5px 5px;
+    }
 
   }
 }

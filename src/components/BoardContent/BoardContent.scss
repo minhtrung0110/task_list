@@ -1,12 +1,13 @@
 @import '../../scss/style.scss';
 
 
-.board-columns{
+.board-content{
+  height:$board-content-height;
   background-color:$appbar-bg-color ;
   display: flex;
-  padding:$gap ;
-
+  overflow-y: hidden;
   overflow-x: auto;
+  padding: calc(2 * $gap) 0;
   &::-webkit-scrollbar{
     -webkit-appearance: none;
   }
@@ -17,6 +18,30 @@
     background-color:darken($list-bg-color,15);
     border-radius:3px;
   }
-
+  .column-drop-preview{
+    background-color: rgba(150, 150, 200, 0.1);
+    border: 1px dashed #abc;
+    margin: 5px 45px 5px 5px;
+  }
   //  background-color:$
+  .add-new-column{
+    max-width: 400px;
+    min-width: 320px;
+    text-align: center;
+    height: 40px;
+    line-height:40px;
+    padding: 4px 0 4px 15px;
+    color:white;
+    margin-left: $gap;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: hsla(0,0%,100%,.24);
+    border-radius: $column-border-radius;
+    &:hover{
+      background-color: hsla(0,0%,100%,.14);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+  }
 }

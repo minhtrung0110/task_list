@@ -3,14 +3,14 @@ import classNames from "classnames/bind";
 import styles from "./Card.scss";
 
 const cx = classNames.bind(styles);
-function Card({data}) {
+function Card({card}) {
     return (
-        <li className={cx('card-item')}>
-            <span className={cx('card-title')}>{data.title}</span>
-            <span className={cx('card-description')}>{data.description}</span>
-            { !!data.cover && <img src={data.cover} alt='img'/>}
+        <div className={cx('card-item')}>
+            <span className={cx('card-title')}>{`${card.title} - ${card.id}`}</span>
+            <span className={cx('card-description')}>{card.description}</span>
+            { !!card.cover && <img src={card.cover} alt='img'/>}
 
-        </li>
+        </div>
     );
 }
 

@@ -5,6 +5,10 @@ $screen-md:992px;
 $screen-sm:7768px;
 $screen-phone:480px;
 $screen-ip6-down:'(max-width:375px)';
+//=100vh
+$navbar-app-height:4vh;
+$navbar-board-height:5vh;
+$board-content-height:91vh;
 
 
 $board-bg-color:#0079bf;
@@ -15,3 +19,4 @@ $column-header-height:36px;
 $column-footer-height:36px;
 $column-border-radius:8px;
 $card-border-radius:5px;
+
