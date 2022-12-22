@@ -2,10 +2,13 @@
 .card-item {
   background-color: white;
   padding:$gap;
+  min-height: calc(5 * $gap);
   border-radius: $card-border-radius;
   box-shadow:0 1px 1px rgba(0,0,0,0.2);
   margin-bottom: $gap;
-
+  &:hover{
+    background-color:$list-bg-color;
+  }
   img{
     display: block;
     width: calc(95% + ( 2 * #{$gap} ));
@@ -22,6 +25,18 @@
     font-style:italic;
     display: block;
     text-align: justify;
+  }
+  .btn-edit-card{
+    color: #d5d3d3;
+    width: calc($gap * 3);
+    height: calc($gap * 3);
+    padding: 7px;
+    border-radius: 3px;
+    &:hover{
+      background-color: #f8f6f6;
+      color: #8a8988;
+      cursor: pointer;
+    }
   }
 
 }

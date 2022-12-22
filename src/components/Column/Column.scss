@@ -13,30 +13,40 @@
     padding: 0 8px;
   }
   .col-title {
-    font-size:20px;
+    font-size:18px;
     display: flex;
-    justify-content: center;
-    padding:$gap 0;
-  }
-  header {
-    padding-left: 15px;
-    height:$column-header-height;
-    line-height: 36px;
-    font-size: 16px;
+    padding: $gap calc( $gap / 2) $gap calc( 2 * $gap) ;
+    line-height: 30px;
     font-weight: bold;
     border-top-left-radius: $column-border-radius;
     border-top-right-radius: $column-border-radius;
-    cursor:pointer;
+    .col-more{
+      color: #a19f9f;
+      width: 38px;
+      height: 38px;
+      padding: 10px;
+      border-radius: 3px;
+      &:hover{
+        cursor: pointer;
+        color: #676666;
+        background-color: rgba(136, 136, 135, 0.12);
+      }
+    }
+  }
+  header {
+
+
   }
   footer {
     height:$column-footer-height;
     line-height: 36px;
     font-size: 16px;
     font-weight: bold;
-    padding: $gap;
+    color: $color-text;
     text-align: center;
     border-bottom-left-radius: $column-border-radius;
     border-bottom-right-radius: $column-border-radius;
+
   }
   footer:hover{
     cursor: pointer;

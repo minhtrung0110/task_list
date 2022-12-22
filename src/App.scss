@@ -1,3 +1,6 @@
+@import "~bootstrap/scss/bootstrap";
+
+
 @import 'scss/style.scss';
 
 body{
@@ -11,7 +14,10 @@ body{
   overflow: hidden;
   background-color: $board-bg-color;
 
-
+    .trello-minhtrung-container{
+      margin: 0 15px;
+      padding: 0;
+    }
 
 
 

@@ -1,14 +1,16 @@
 import React from 'react';
-import classNames from "classnames/bind";
-import styles from "./Card.scss";
+import  "./Card.scss";
+import {FaPen} from "react-icons/fa";
 
-const cx = classNames.bind(styles);
 function Card({card}) {
     return (
-        <div className={cx('card-item')}>
-            <span className={cx('card-title')}>{`${card.title} - ${card.id}`}</span>
-            <span className={cx('card-description')}>{card.description}</span>
-            { !!card.cover && <img src={card.cover} alt='img'/>}
+        <div className='card-item d-flex justify-content-between align-items-center'>
+           <div className=''>
+               <span className='card-title'>{`${card.title} - ${card.id}`}</span>
+
+               { !!card.cover && <img src={card.cover} alt='img'/>}
+           </div>
+            <FaPen className='btn-edit-card' />
 
         </div>
     );

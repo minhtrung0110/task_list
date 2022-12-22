@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import styles from "./Column.scss";
 import {Container, Draggable} from "react-smooth-dnd";
 import {mapOrder} from "~/utilities/sorts";
+import {FaEllipsisH, FaPlus} from "react-icons/fa";
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +14,11 @@ function Column({column,onCardDrop}) {
     return (
         <div className="column">
 
-            <header className={cx('col-title', 'column-drag-handle')}>{column.title} </header>
+            <header className='col-title column-drag-handle d-flex justify-content-between align-items-center'>
+                <div className='' >{column.title}</div>
+                <FaEllipsisH  className='col-more'/>
+
+            </header>
             <div className='card-list'>
                 <Container
                     // onDragStart={e => console.log("drag started", e)}
@@ -47,7 +52,7 @@ function Column({column,onCardDrop}) {
                     }
                 </Container>
             </div>
-            <footer>Add new task</footer>
+            <footer className='d-flex align-items-center justify-content-center'> <FaPlus /> Add new task</footer>
         </div>
     );
 }
