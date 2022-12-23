@@ -18,6 +18,19 @@ body{
       margin: 0 15px;
       padding: 0;
     }
+  .minhtrung-content-editable{
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+
+    &:focus{
+      background-color:white;
+      border: 1px solid $appbar-bg-color;
+      cursor: text;
+    }
+  }
 
 
 
