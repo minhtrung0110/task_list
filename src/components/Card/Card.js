@@ -6,7 +6,7 @@ function Card({card}) {
     return (
         <div className='card-item d-flex justify-content-between align-items-center'>
            <div className=''>
-               <span className='card-title'>{`${card.title} - ${card.id}`}</span>
+               <span className='card-title'>{`${card.title}`}</span>
 
                { !!card.cover && <img src={card.cover} alt='img'/>}
            </div>

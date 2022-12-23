@@ -13,7 +13,7 @@ import column from "~/components/Column/Column";
 
 function BoardContent() {
     const [board,setBoard]=useState({})
-    const [columns,setColumn] = useState([])
+    const [columns,setColumns] = useState([])
     const [isOpenNewColForm,setIsOpenNewColForm]=useState(false)
     const [newColTitle,setNewColTitle]=useState('')
 
@@ -24,9 +24,9 @@ function BoardContent() {
             setBoard(boardFromDB)
             // sort Column
 
-            setColumn(mapOrder(boardFromDB.columns,boardFromDB.columnOrder,'id'))
+            setColumns(mapOrder(boardFromDB.columns,boardFromDB.columnOrder,'id'))
         }
-    },[])
+    },[       ])
 
     const onColumnDrop=(dropResult)=>{
         let newColumns=[...columns]
@@ -37,7 +37,7 @@ function BoardContent() {
         // cập nhật columnnOrder bang các id sau khi keo tha
         newBoard.columnOrder=newColumns.map(item=>item.id)
         newBoard.columns=newColumns
-        setColumn(newColumns)
+        setColumns(newColumns)
         setBoard(newBoard)
         // console.log(newColumns)
         // console.log(newBoard)
@@ -50,7 +50,7 @@ function BoardContent() {
 
             currentColumn.cards=applyDrag(currentColumn.cards,dropResult)
             currentColumn.cardOrder=currentColumn.cards.map(i=>i.id)
-            setColumn(newColumns)
+            setColumns(newColumns)
             console.log( currentColumn)
         }
 
@@ -71,7 +71,7 @@ function BoardContent() {
         // cập nhật columnnOrder bang các id sau khi keo tha
         newBoard.columnOrder=newColumns.map(item=>item.id)
         newBoard.columns=newColumns
-        setColumn(newColumns)
+        setColumns(newColumns)
         setBoard(newBoard)
 
 
@@ -81,9 +81,29 @@ function BoardContent() {
 
 
     }
-    const toggleOpenNewAddColumn=()=>{
 
+    const handleUpdateColumn=(newColUpdate)=>{
+        const columnIdToUpdate=newColUpdate.id
+        let newColumns=[...columns]
+        const columnIndexToUpdate=newColumns.findIndex(i=>i.id===newColUpdate.id)
+        console.log('xóa ở: ',columnIndexToUpdate)
+        if(newColUpdate._destroy){
+            newColumns.splice(columnIndexToUpdate,1)
+            setColumns(newColumns)
+        }else{
+            newColumns.splice(columnIndexToUpdate,1,newColUpdate)
+            setColumns(newColumns)
+        }
+
+       // console.log(columns)
+        let newBoard={...board}
+        newBoard.columnOrder=newColumns.map(item=>item.id)
+        newBoard.columns=newColumns
+
+        setBoard(newBoard)
+        console.log(newColUpdate)
     }
+
     return (
       isEmpty(board)?(
           <div className="not-found">Not FOUND</div>
@@ -105,7 +125,12 @@ function BoardContent() {
                           <Draggable
 
                               key={index}>
-                              <Column column={col} onCardDrop={onCardDrop} />
+                              <Column
+                                  column={col}
+                                  onCardDrop={onCardDrop}
+                                  onUpdateColumn={handleUpdateColumn}
+
+                              />
                           </Draggable>
 
                       ))
