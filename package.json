@@ -27,7 +27,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,8 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^4.1.0"
-  }
+    "babel-plugin-module-resolver": "^4.1.0",
+    "gh-pages": "^4.0.0"
+  },
+  "homepage": "http://minhtrung0110.github.io/task_list"
 }
