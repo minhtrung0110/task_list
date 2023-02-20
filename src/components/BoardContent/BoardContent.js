@@ -81,7 +81,7 @@ function BoardContent() {
 
 
     }
-
+    console.log(board)
     const handleUpdateColumn=(newColUpdate)=>{
         const columnIdToUpdate=newColUpdate.id
         let newColumns=[...columns]
