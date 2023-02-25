@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+@import '../../scss/style.scss';
+
+body{
+  margin: 0;
+  font-size: 14px;
+  line-height:1.3rem;
+  font-family: "Source Sans Pro",sans-serif;
+}
+.trello-minhtrung-master{
+  height: 100vh;
+  overflow: hidden;
+  background-color: $board-bg-color;
+
+  .trello-minhtrung-container{
+    margin: 0 15px;
+    padding: 0;
+  }
+  .minhtrung-content-editable{
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+
+    &:focus{
+      background-color:white;
+      border: 1px solid $appbar-bg-color;
+      cursor: text;
+    }
+  }
+
+
+
+
+
+
+}
