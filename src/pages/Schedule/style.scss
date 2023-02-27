@@ -1,0 +1,15 @@
+.minhtrung-content-calendar{
+  display: flex;
+  height: 1000px;
+  margin: 0;
+  padding: 0;
+  .sidebar{
+    width: 200px !important;
+    background-color: blue;
+    height: 800px;
+  }
+  .calendar{
+    width: calc(100% - 200px);
+    height: 800px;
+  }
+}
