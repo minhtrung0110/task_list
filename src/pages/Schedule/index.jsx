@@ -32,6 +32,18 @@ function SchedulePage(props) {
             end: new Date(),
             description: 'Mô tả sự kiện B'
         },
+        {
+            title: 'Sự kiện lặp lại',
+            start: new Date(2023, 2, 1, 10, 0), // Ngày bắt đầu
+            end: new Date(2023, 2, 12, 12, 0), // Ngày kết thúc
+            rrule: {
+                freq: 'weekly',
+                interval: 1,
+                byweekday: [moment.weekdays().indexOf('Wednesday')],
+                dtstart: new Date(2023, 2, 1),
+                until: new Date(2023, 4, 1),
+            },
+        },
         // ...
     ];
 
@@ -127,6 +139,7 @@ function SchedulePage(props) {
                 selectable
                 scrollToTime={scrollToTime}
                 eventPropGetter={eventStyleGetter}
+                recurringEvents={events}
             />
         </div>
     );
