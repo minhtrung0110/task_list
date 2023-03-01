@@ -110,7 +110,9 @@ function SchedulePage(props) {
             opacity: 0.8,
             color: 'white',
             border: '0px',
-            display: 'block'
+            display: 'block',
+            width:'90%',
+            verticalAlign: 'middle'
         };
         return {
             style: style,

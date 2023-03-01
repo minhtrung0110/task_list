@@ -12,7 +12,7 @@
   img{
     display: block;
     width: calc(95% + ( 2 * #{$gap} ));
-    margin: $gap 0 $gap -$gap;
+    margin: $gap 0 $gap - $gap;
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
   }
